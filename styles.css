@@ -1,0 +1,99 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto; 
+    min-height: 100vh; 
+    grid-template-areas:
+        "head"
+        "hero"
+        "main"
+        "foot";
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: black;
+}
+
+
+header {
+    grid-area: head;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: solid 1px black;
+    gap: 3rem;
+    padding: 1rem;
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+
+.header-logo {
+    max-height: 1.5em;
+    max-width: 1.5em;
+    align-items: center;
+    margin-right: 0.5rem; 
+}
+
+.header-title {
+    font-size: 1em;
+    color: #0E0E0E;
+    font-weight: 700;
+    letter-spacing: -.03em;
+    line-height: 1;
+}
+
+nav {
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    font-size: 0.8em;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    padding: 0.25rem 0;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+}
+
+nav a:hover {
+    color: #c49743;
+    text-decoration: none;
+}
+
+nav a:focus {
+    outline: 3px solid rgba(10,102,194,0.18);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+
+
+
+
+main {
+    grid-area: main;
+}
+
+.hero {
+    grid-area: hero;
+}
+
+footer {
+    grid-area: foot;
+}
+
+
+
