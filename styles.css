@@ -26,6 +26,8 @@ body {
     line-height: 1.6;
     background-color: #FFFFFF;
     color: black;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 
@@ -33,7 +35,7 @@ body {
 header {
     grid-area: head;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     padding: 1rem;
 }
@@ -53,7 +55,7 @@ header {
 }
 
 .header-title {
-    font-size: 1.15;
+    font-size: 1.15em;
     color: #0E0E0E;
     font-weight: 700;
     letter-spacing: -.03em;
@@ -87,7 +89,7 @@ nav a:hover { color: inherit; }
     left: 0;
     right: 0;
     bottom: 1px;
-    height: 2px;
+    height: 3px;
     background: currentColor;
     transform-origin: left center;
     transform: scaleX(0);
@@ -113,7 +115,7 @@ nav a:focus {
 
 /* HERO STYLES */
 .hero {
-    background-image: url('./images/hero.png');
+    background-image: url('./images/hero-desk.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -221,6 +223,10 @@ main {
     flex-direction: column;
 }
 
+.blog-card:nth-of-type(n + 4) {
+    display: none;
+}
+
 .card-img {
     object-fit: cover;
     object-position: center;
@@ -281,13 +287,8 @@ footer {
 
 }
 
-.main-article h1 {
-    font-size: 2.5em;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-}
 
-.main-article img {
+.main-article-img {
     max-width: 100%;
     object-fit: cover;
     object-position: center;
@@ -334,3 +335,100 @@ footer {
     font-size: 1.3em;
     align-self: flex-center;
 }
+
+/* ABOUT ME STYLES */
+.author-pic {
+    max-width: 35%;;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    margin-right: auto;
+}
+
+.about-me h1 {
+    font-size: 2em;
+    max-width: 30ch;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    margin-right: auto;
+}
+
+
+@media (min-width: 800px) {
+
+    /* MAIN STYLE ADJUSTMENTS */
+    body {
+        max-width: 100%;
+        grid-template-areas:
+        "head"
+        "hero"
+        "main"
+        "foot";
+    }
+
+    header{
+        margin-right: 4rem;
+        margin-left: 4rem;
+        padding: 1.5rem;
+    }
+
+    .header-title {
+        font-size: 1.25em;
+    }
+
+    .hero {
+        align-self: center;;
+        min-height: 60vh;
+        display: flex;
+        align-items: flex-end;
+    }
+    
+    .hero-text {
+        padding: 4rem;
+        max-width: 200ch;
+    }
+
+    .hero h1 {
+        max-width: none;
+    }
+
+    .hero p {
+        max-width: 100ch;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url('./images/hero-desk-crop.png');
+        background-size: cover;
+        background-position: center 60%;
+        transform: scaleY(-1);
+        z-index: -1;
+    }
+
+
+    main {
+        flex: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 1600px;
+        padding: 4rem;
+    }
+
+    .blog-card:nth-of-type(n + 4) {
+        display: flex; 
+    }
+
+    .blog-card img {
+        height: 18vh;
+        border-radius: 3px;
+    }
+
+    .view-more {
+        margin: 0 auto;
+        margin-bottom: -2em;
+        grid-column: span 3;
+    }
+
+}
+
