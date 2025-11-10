@@ -1,1 +1,1 @@
-cole-steele.github.io/learning-journal/
+https://cole-steele.github.io/learning-journal/
